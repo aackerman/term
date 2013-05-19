@@ -1,5 +1,10 @@
 package term
 
+import (
+	"bytes"
+	"fmt"
+)
+
 func ColorPrintf(c string, f string, a ...interface{}) {
 	// start escape \033[
 	// end escape   m
