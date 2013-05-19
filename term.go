@@ -3,6 +3,7 @@ package term
 import (
 	"bytes"
 	"fmt"
+	"strings"
 )
 
 func ColorPrintf(c string, f string, a ...interface{}) {
@@ -32,10 +33,9 @@ func ColorPrintf(c string, f string, a ...interface{}) {
 	end := "m"
 
 	// create color string
-	buf.WriteString(start)
-	buf.WriteString(color[c])
-	buf.WriteString(end)
-	buf.WriteString(f)
+	str := strings.Join([]string{start, color[c], end, f}, "")
+
+	buf.WriteString(str)
 
 	fmt.Printf(buf.String(), a...)
 
