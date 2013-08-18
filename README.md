@@ -1,3 +1,3 @@
 # Term
 
-A go package from terminal output
+A go package for terminal output
